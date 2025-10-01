@@ -1,0 +1,67 @@
+// Mobile-Styles für die Navigation
+nav#main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem;
+    position: relative; // Für die absolute Positionierung des Dropdown-Menüs
+
+    #burger-menu {
+        display: block;
+        cursor: pointer;
+        img {
+            height: 55px;
+            transition: transform 0.3s ease; // Animation für die Drehung
+        }
+
+        // Wenn das Burger-Menü aktiv ist (via JS hinzugefügte Klasse)
+        &.active img {
+            transform: rotate(90deg);
+        }
+    }
+
+    #nav-pages {
+        display: none;
+        position: absolute;
+        top: 100%; // Direkt unter der Navigation
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+
+        // Wenn das Menü angezeigt werden soll (via JS hinzugefügte Klasse)
+        &.show {
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                margin-bottom: 1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: @text-color-primary;
+                    font-weight: bold;
+                    display: block;
+                    padding: 0.5rem 0;
+                }
+
+                a:hover {
+                    color: @logo-color;
+                }
+
+                a:hover::before {
+                    content: "> ";
+                }
+            }
+        }
+    }
+}

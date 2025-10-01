@@ -1,0 +1,168 @@
+// Mobile-Styles (Standard-Styles, werden bei größeren Bildschirmen überschrieben)
+header#hero {
+    display: block;
+    width: 100%; // Volle Breite auf mobilen Geräten
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 600px; // Feste Höhe für mobile Ansicht
+    padding-bottom: 1rem;
+
+    .header-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("@{image-path}/tuerkieses_wasser.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+        transform: scale(1.1);
+    }
+
+    .header-content {
+        width: 95%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    #tab-navigation {
+        width: 100%;
+        margin: 0 auto;
+
+        #nav-links {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            nav#tab-nav-links {
+                width: 100%;
+
+                ul {
+                    display: flex;
+                    list-style-type: none;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    gap: 0.3rem;
+
+                    li.nav-item {
+                        margin-top: 3rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center; // Zentriert für mobile Ansicht
+                        background-color: #000;
+                        color: #fff;
+                        flex: 1;
+                        cursor: pointer;
+                        text-align: center; // Zentriert für mobile Ansicht
+                        padding: 0.5rem;
+
+                        // Text ausblenden für mobile Ansicht
+                        font-size: 0;
+                        line-height: 0;
+
+                        .nav-icon {
+                            display: inline-block;
+                            width: 3rem; // 50% größer für mobile Ansicht
+                            height: 3rem; // 50% größer für mobile Ansicht
+                            margin: 0.5rem; // Gleichmäßiger Abstand
+                            background-color: #fff;
+                            mask-repeat: no-repeat;
+                            mask-position: center;
+                            mask-size: contain;
+                            -webkit-mask-repeat: no-repeat;
+                            -webkit-mask-position: center;
+                            -webkit-mask-size: contain;
+                            flex-shrink: 0;
+                        }
+
+                        // Icon-Styles bleiben unverändert
+                        .plane-icon {
+                            mask-image: url("@{image-path}/plane-svgrepo-com.svg");
+                            -webkit-mask-image: url("@{image-path}/plane-svgrepo-com.svg");
+                        }
+
+                        .flight-hotel-icon {
+                            mask-image: url("@{image-path}/svg.svg");
+                            -webkit-mask-image: url("@{image-path}/svg.svg");
+                        }
+
+                        .car-icon {
+                            mask-image: url("@{image-path}/car-svgrepo-com.svg");
+                            -webkit-mask-image: url("@{image-path}/car-svgrepo-com.svg");
+                        }
+
+                        .hotel-icon {
+                            mask-image: url("@{image-path}/bed-double-fill-svgrepo-com.svg");
+                            -webkit-mask-image: url("@{image-path}/bed-double-fill-svgrepo-com.svg");
+                        }
+
+                        &:hover {
+                            color: @logo-color;
+                            .nav-icon {
+                                background-color: @logo-color;
+                            }
+                        }
+
+                        &.active {
+                            color: #000;
+                            background-color: #fff;
+                            cursor: default;
+
+                            .nav-icon {
+                                background-color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #tab-container {
+            position: relative;
+
+            .tab-content-wrapper {
+                position: relative;
+                min-height: 400px; // Feste Höhe für den Tab-Inhalt
+                height: 400px !important; // Überschreibe dynamische Höhenanpassung durch JS
+            }
+
+            .tab-content {
+                display: none;
+                padding: 1rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%; // Füllt den gesamten verfügbaren Raum
+                background-color: #fff;
+                color: #000;
+                transition: opacity 0.6s ease-in-out;
+                opacity: 0;
+                overflow-y: auto; // Scrollbar für überlaufenden Inhalt
+            }
+
+            .tab-content.active {
+                display: block;
+                opacity: 1;
+                z-index: 10;
+            }
+
+            .tab-content.fade-out {
+                display: block;
+                opacity: 0;
+                z-index: 20;
+            }
+
+            .tab-content.fade-in {
+                display: block;
+                opacity: 1;
+                z-index: 10;
+            }
+        }
+    }
+}

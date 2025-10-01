@@ -1,0 +1,237 @@
+// Tablet-Ansicht (ab 701px)
+@media (min-width: 701px) {
+    nav#main-nav {
+        margin: 2rem 5rem;
+
+        #burger-menu {
+            display: none;
+        }
+
+        #nav-pages {
+            display: block !important; // Überschreibe die JS-Steuerung im Desktop-Modus
+            position: static; // Zurücksetzen der absoluten Positionierung
+            box-shadow: none;
+            padding: 0;
+
+            ul {
+                display: flex;
+                gap: 3rem;
+
+                li {
+                    margin-bottom: 0;
+
+                    a {
+                        position: relative;
+                        padding-left: 1.2em; // Platz für das ::before-Element reservieren
+
+                        // Transparentes ::before-Element als Platzhalter
+                        &::before {
+                            content: "> ";
+                            position: absolute;
+                            left: 0;
+                            opacity: 0;
+                            transition: opacity 0.2s ease;
+                        }
+
+                        &:hover::before {
+                            opacity: 1; // Nur die Sichtbarkeit ändern, nicht die Position
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    header#hero {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        transition: height 0.6s ease;
+        padding-bottom: 2rem;
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("@{image-path}/tuerkieses_wasser.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 0;
+            transform: scale(1.1); /* Verhindert sichtbare Kanten bei Größenänderungen */
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            width: auto;
+        }
+
+        #tab-navigation {
+            width: 95%;
+            margin: 0 auto;
+            
+            #nav-links {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+
+                nav#tab-nav-links {
+                    width: 100%;
+
+                    ul {
+                        display: flex;
+                        list-style-type: none;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        gap: 0.5rem;
+
+                        li.nav-item {
+                            margin-top: 5rem;
+                            display: flex;
+                            align-items: center;
+                            // justify-content entfernt, um linksbündigen Text zu ermöglichen
+                            background-color: #000;
+                            color: #fff;
+                            flex: 1;
+                            cursor: pointer;
+                            text-align: left; // Text linksbündig ausrichten
+                            padding: 0.5rem 1rem; // Padding links hinzugefügt für Abstand vom Rand
+
+                            .nav-icon {
+                                display: inline-block;
+                                width: 2rem;
+                                height: 2rem;
+                                margin: 0.5rem 1rem 0.5rem 0; // Margin rechts für Abstand zum Text
+                                background-color: #fff;
+                                mask-repeat: no-repeat;
+                                mask-position: center;
+                                mask-size: contain;
+                                -webkit-mask-repeat: no-repeat;
+                                -webkit-mask-position: center;
+                                -webkit-mask-size: contain;
+                                flex-shrink: 0; // Verhindert, dass das Icon schrumpft
+                            }
+
+                            // Rest der Icon-Styles bleiben unverändert
+                            .plane-icon {
+                                mask-image: url("@{image-path}/plane-svgrepo-com.svg");
+                                -webkit-mask-image: url("@{image-path}/plane-svgrepo-com.svg");
+                            }
+
+                            .flight-hotel-icon {
+                                mask-image: url("@{image-path}/svg.svg");
+                                -webkit-mask-image: url("@{image-path}/svg.svg");
+                            }
+
+                            .car-icon {
+                                mask-image: url("@{image-path}/car-svgrepo-com.svg");
+                                -webkit-mask-image: url("@{image-path}/car-svgrepo-com.svg");
+                            }
+
+                            .hotel-icon {
+                                mask-image: url("@{image-path}/bed-double-fill-svgrepo-com.svg");
+                                -webkit-mask-image: url("@{image-path}/bed-double-fill-svgrepo-com.svg");
+                            }
+
+                            &:hover {
+                                color: @logo-color;
+                                .nav-icon {
+                                    background-color: @logo-color;
+                                }
+                            }
+
+                            &.active {
+                                color: #000;
+                                background-color: #fff;
+                                cursor: default;
+
+                                .nav-icon {
+                                    background-color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            #tab-container {
+                position: relative;
+
+                .tab-content-wrapper {
+                    position: relative;
+                    min-height: 100px;
+                    transition: height 0.3s ease; // Sanfte Höhenanpassung
+                    height: auto !important;
+                }
+
+                .tab-content {
+                    display: none;
+                    padding: 1rem;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: #fff; // Undurchsichtiger Hintergrund
+                    color: #000;
+                    transition: opacity 0.6s ease-in-out;
+                    opacity: 0;
+                    height: auto;
+                    overflow-y: visible;
+                }
+
+                .tab-content.active {
+                    display: block;
+                    opacity: 1;
+                    z-index: 10; // Aktiver Inhalt ist oben
+                }
+
+                .tab-content.fade-out {
+                    display: block;
+                    opacity: 0;
+                    z-index: 20; // Während des Ausblendvorgangs ÜBER dem neuen Inhalt
+                }
+
+                .tab-content.fade-in {
+                    display: block;
+                    opacity: 1; // Sofort voll sichtbar
+                    z-index: 10; // Unter dem ausblendenden Element
+                }
+            }
+        }
+    }
+
+    // News Section für Tablet-Ansicht (ab 701px)
+    .main-content {
+        width: 85%;
+        margin: 0px auto;
+        
+        .news-section {
+            padding: 2.5rem 1.5rem;
+
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr); // 2 Spalten für Tablet
+                gap: 2.5rem;
+            }
+
+            .news-card {
+                height: 380px; // Angepasste Höhe für Tablet
+
+                .card-body {
+                    h3 {
+                        font-size: 0.95rem;
+                    }
+
+                    h4 {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}

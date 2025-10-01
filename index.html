@@ -1,22 +1,232 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dbe-fly - Projekt</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        h1 { color: #333; }
-        .info { background-color: #f4f4f4; padding: 20px; border-radius: 5px; }
-        .warning { background-color: #ffeeee; color: #cc0000; padding: 10px; border-radius: 5px; margin-top: 20px; border: 1px solid #cc0000; }
-    </style>
-</head>
-<body>
-    <h1>dbe-fly</h1>
-    <div class="info">
-        <p>Dieses Projekt wurde automatisch am 30.09.2025 um 10:32 Uhr erstellt.</p>
-        <p>Datenbank: dbe-fly</p>
-        <p>Datenbank-Benutzer: dbe-fly</p>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>dbe-fly - Projekt</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="ressources/images/favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="ressources/images/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="ressources/images/favicons/favicon-16x16.png"
+        />
+        <link
+            rel="manifest"
+            href="ressources/images/favicons/site.webmanifest"
+        />
+        <link rel="stylesheet" href="/ressources/css/styles.css" />
+    </head>
+    <body>
+        <!-- Hauptnavigation: gesamte Breite im Desktop/Portrait-Handy -->
+        <!-- Handy: Dropdown Menü -->
+        <nav id="main-nav">
+            <div id="logo">
+                <a href="/">
+                    <img
+                        src="ressources/images/logo-green.svg"
+                        alt="Logo DBE-Academy"
+                    />
+                </a>
+            </div>
+            <div id="burger-menu">
+                <img
+                    src="ressources/images/burger_menu.svg"
+                    alt="Menü öffnen/schließen"
+                />
+            </div>
+            <div id="nav-pages">
+                <ul>
+                    <li><a href="#">Buchen&Vorbereiten</a></li>
+                    <li><a href="#">Meine Buchungen</a></li>
+                    <li><a href="#">DBE Fly entdecken</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header id="hero">
+            <div class="header-background"></div>
+            <div class="header-content">
+                <div id="tab-navigation">
+                    <div id="nav-links">
+                        <nav id="tab-nav-links">
+                            <ul>
+                                <li class="nav-item active">
+                                    <span class="nav-icon plane-icon"></span>
+                                    Flüge
+                                </li>
+                                <li class="nav-item">
+                                    <span
+                                        class="nav-icon flight-hotel-icon"
+                                    ></span>
+                                    Flug & Hotel
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-icon car-icon"></span>
+                                    Mietwagen
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-icon hotel-icon"></span>
+                                    Hotel
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="tab-container">
+                        <div class="tab-content-wrapper">
+                            <div id="flights" class="tab-content active">
+                                <h3>Flüge</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Inventore quasi earum
+                                    excepturi rerum error quae nemo maiores,
+                                    quidem quisquam assumenda veniam ipsam,
+                                    neque, porro a laudantium eos qui soluta
+                                    fugit dolorum itaque ea nihil! Magni quis ea
+                                    maiores unde illum at, ratione repellendus
+                                    recusandae tenetur magnam corrupti? Saepe,
+                                    at perferendis.
+                                </p>
+                            </div>
+                            <div id="flight-hotel" class="tab-content">
+                                <h3>Flug & Hotel</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Temporibus ipsum corrupti
+                                    repudiandae tenetur similique, asperiores
+                                    iste reiciendis veniam veritatis fugiat
+                                    tempore placeat quisquam voluptatibus
+                                    repellat beatae odio doloremque voluptatem
+                                    commodi accusamus quis! Similique pariatur
+                                    quidem, quasi expedita asperiores aspernatur
+                                    modi ullam adipisci, neque molestiae quo
+                                    porro autem deleniti dolores inventore et
+                                    minima velit dicta molestias vitae unde
+                                    facere doloremque! Suscipit accusamus
+                                    perspiciatis hic ex quasi dolores minus,
+                                    architecto laborum et exercitationem, minima
+                                    voluptatem est facilis ipsum vitae
+                                    consectetur obcaecati sapiente natus
+                                    consequatur doloribus. Cumque mollitia magni
+                                    voluptatum dicta, nihil vel veritatis,
+                                    dolorum numquam facilis, quibusdam saepe
+                                    cupiditate fugiat? Nam ea assumenda nemo
+                                    nobis vero quis porro placeat sequi nesciunt
+                                    quod, ratione corrupti, vitae beatae
+                                    reiciendis eius officiis saepe aperiam
+                                    delectus quam! Veritatis ullam ut laborum
+                                    explicabo excepturi culpa, facere iste
+                                    officiis ab sed maxime voluptatibus,
+                                    consequatur, numquam deleniti fugiat veniam!
+                                    Fuga tempore odit consectetur sed quis optio
+                                    molestias dolorem porro saepe? Sequi, ipsum.
+                                    Tempora explicabo, modi excepturi dolore a
+                                    maiores optio tempore vel rem iusto eos,
+                                    voluptas veniam officia, in quidem eligendi
+                                    accusamus amet sed molestias eveniet!
+                                    Provident ratione voluptas explicabo
+                                    quibusdam similique? Corporis aliquam eius
+                                    accusamus repudiandae deserunt repellendus
+                                    ipsam deleniti architecto aliquid, odio
+                                    doloribus itaque modi ducimus incidunt magni
+                                    veritatis dolore quia tempora cum! At, ipsam
+                                    velit quos possimus porro earum assumenda
+                                    iusto, repudiandae animi quidem eveniet!
+                                    Provident explicabo nisi voluptatem ipsa
+                                    eveniet minus deleniti assumenda quo soluta
+                                    ipsam, nemo velit delectus deserunt voluptas
+                                    enim debitis? Repellat non earum possimus
+                                    hic facere, dolor omnis eveniet voluptatem
+                                    eum libero.
+                                </p>
+                            </div>
+                            <div id="car-rent" class="tab-content">
+                                <h3>Mietwagen</h3>
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Inventore corrupti
+                                    consequatur optio architecto excepturi?
+                                    Soluta nostrum blanditiis quibusdam ducimus
+                                    odit odio. Consectetur necessitatibus nisi,
+                                    asperiores doloremque ab placeat harum ut!
+                                </p>
+                            </div>
+                            <div id="hotel" class="tab-content">
+                                <h3>Hotel</h3>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Ab non quas, dolores
+                                    tenetur, voluptatibus iusto, eos aspernatur
+                                    incidunt omnis autem nam quasi similique
+                                    obcaecati ipsa neque vel dolorem deleniti
+                                    exercitationem distinctio soluta iste
+                                    reprehenderit quo laboriosam? Adipisci
+                                    numquam aut possimus asperiores, voluptatem,
+                                    aspernatur suscipit dolor harum
+                                    reprehenderit quos nisi sint corporis cum!
+                                    Laboriosam repellendus sint nam. Facilis
+                                    minus exercitationem, ipsa aspernatur cum
+                                    veritatis explicabo natus magni laudantium
+                                    quia amet quis repellat quae accusantium
+                                    quidem ullam perspiciatis quo veniam. Ad
+                                    modi esse molestias ipsum nisi laboriosam
+                                    suscipit iste error libero veritatis,
+                                    debitis soluta nostrum totam quisquam velit
+                                    dolor, molestiae tenetur illo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="news-section">
+                <div class="news-grid">
+                    <!-- Card 1 -->
+                    <article class="news-card">
+                        <div class="card-header">
+                            <img src="ressources/images/capitol_w_dc.jpg" alt="News Titel 1" />
+                        </div>
+                        <div class="card-body">
+                            <h3>Kategorie/Datum</h3>
+                            <h4>
+                                Hauptüberschrift des Artikels mit wichtigen
+                                Details
+                            </h4>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="news-card">
+                        <div class="card-header">
+                            <img src="ressources/images/artwork_man_laptop.png" alt="News Titel 2" />
+                        </div>
+                        <div class="card-body">
+                            <h3>Kategorie/Datum</h3>
+                            <h4>
+                                Zweiter Artikel mit längerer Überschrift für
+                                bessere Darstellung, der möglicherweise über
+                                mehrere Zeilen geht
+                            </h4>
+                        </div>
+                    </article>
+
+                    <!-- Weitere Cards nach Bedarf -->
+                </div>
+            </section>
+        </main>
+
+        <script src="ressources/js/main.js"></script>
+    </body>
 </html>

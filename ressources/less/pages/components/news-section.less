@@ -1,0 +1,72 @@
+// Mobile-Styles für die News-Section
+.main-content {
+    width: 100%;
+
+    // News Section Styles
+    .news-section {
+        width: 100%;
+        padding: 2rem 1rem;
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr; // Mobile: Eine Spalte
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            overflow: hidden;
+            border: 1px solid #ececec;
+            // Feste Höhe für alle Cards
+            height: 400px; // Anpassen nach Bedarf
+
+            .card-header {
+                flex: 3; // 3/5 der Card-Höhe
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; // Bild wird responsiv angepasst, ohne Verzerrung
+                }
+            }
+
+            .card-body {
+                flex: 2; // 2/5 der Card-Höhe
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden; // Verhindert Überlauf bei zu viel Text
+
+                h3 {
+                    font-size: 0.9rem;
+                    margin: 0 0 0.5rem 0;
+                    color: #666;
+                    font-weight: 500;
+                    flex-shrink: 0; // Verhindert Schrumpfen
+                }
+
+                h4 {
+                    font-size: 1.5rem; // 2,5x größer als h3
+                    margin: 0;
+                    font-weight: 700;
+                    line-height: 1.3;
+                    // Text-Overflow-Handling
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; // Maximal 3 Zeilen Text
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+// Desktop-Ansicht (ab 1080px)
+@media (min-width: 1080px) {
+    .main-content {
+        .news-section {
+            padding: 3rem 2rem;
+
+            .news-grid {
+                grid-template-columns: repeat(3, 1fr); // 3 Spalten für Desktop
+                gap: 3rem;
+            }
+
+            .news-card {
+                height: 420px; // Etwas höhere Cards für Desktop
+
+                .card-body {
+                    h3 {
+                        font-size: 1rem;
+                    }
+
+                    h4 {
+                        font-size: 1.8rem;
+                        -webkit-line-clamp: 3; // Maximal 3 Zeilen Text
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Große Desktop-Ansicht (ab 1440px)
+@media (min-width: 1440px) {
+    .main-content {
+        .news-section {
+            padding: 4rem 2rem;
+
+            .news-grid {
+                max-width: 1600px; // Breitere maximale Breite für große Bildschirme
+            }
+
+            .news-card {
+                height: 450px; // Noch etwas höhere Cards für große Bildschirme
+
+                .card-body {
+                    padding: 2rem;
+
+                    h3 {
+                        font-size: 1.1rem;
+                        margin-bottom: 0.8rem;
+                    }
+
+                    h4 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

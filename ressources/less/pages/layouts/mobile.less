@@ -1,0 +1,311 @@
+// Mobile-Styles (Standard-Styles, werden bei größeren Bildschirmen überschrieben)
+
+// Navigation für mobile Ansicht
+nav#main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem;
+    position: relative; // Für die absolute Positionierung des Dropdown-Menüs
+
+    #burger-menu {
+        display: block;
+        cursor: pointer;
+        img {
+            height: 55px;
+            transition: transform 0.3s ease; // Animation für die Drehung
+        }
+
+        // Wenn das Burger-Menü aktiv ist (via JS hinzugefügte Klasse)
+        &.active img {
+            transform: rotate(90deg);
+        }
+    }
+
+    #nav-pages {
+        display: none;
+        position: absolute;
+        top: 100%; // Direkt unter der Navigation
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+
+        // Wenn das Menü angezeigt werden soll (via JS hinzugefügte Klasse)
+        &.show {
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                margin-bottom: 1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: @text-color-primary;
+                    font-weight: bold;
+                    display: block;
+                    padding: 0.5rem 0;
+                }
+
+                a:hover {
+                    color: @logo-color;
+                }
+
+                a:hover::before {
+                    content: "> ";
+                }
+            }
+        }
+    }
+}
+
+// Hero-Bereich für mobile Ansicht
+header#hero {
+    display: block;
+    width: 100%; // Volle Breite auf mobilen Geräten
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 600px; // Feste Höhe für mobile Ansicht
+    padding-bottom: 1rem;
+
+    .header-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("@{image-path}/tuerkieses_wasser.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+        transform: scale(1.1);
+    }
+
+    .header-content {
+        width: 95%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    #tab-navigation {
+        width: 100%;
+        margin: 0 auto;
+
+        #nav-links {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            nav#tab-nav-links {
+                width: 100%;
+
+                ul {
+                    display: flex;
+                    list-style-type: none;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    gap: 0.3rem;
+
+                    li.nav-item {
+                        margin-top: 3rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center; // Zentriert für mobile Ansicht
+                        background-color: #000;
+                        color: #fff;
+                        flex: 1;
+                        cursor: pointer;
+                        text-align: center; // Zentriert für mobile Ansicht
+                        padding: 0.5rem;
+
+                        // Text ausblenden für mobile Ansicht
+                        font-size: 0;
+                        line-height: 0;
+
+                        .nav-icon {
+                            display: inline-block;
+                            width: 3rem; // 50% größer für mobile Ansicht
+                            height: 3rem; // 50% größer für mobile Ansicht
+                            margin: 0.5rem; // Gleichmäßiger Abstand
+                            background-color: #fff;
+                            mask-repeat: no-repeat;
+                            mask-position: center;
+                            mask-size: contain;
+                            -webkit-mask-repeat: no-repeat;
+                            -webkit-mask-position: center;
+                            -webkit-mask-size: contain;
+                            flex-shrink: 0;
+                        }
+
+                        // Icon-Styles
+                        .plane-icon {
+                            mask-image: url("@{image-path}/plane-svgrepo-com.svg");
+                            -webkit-mask-image: url("@{image-path}/plane-svgrepo-com.svg");
+                        }
+
+                        .flight-hotel-icon {
+                            mask-image: url("@{image-path}/svg.svg");
+                            -webkit-mask-image: url("@{image-path}/svg.svg");
+                        }
+
+                        .car-icon {
+                            mask-image: url("@{image-path}/car-svgrepo-com.svg");
+                            -webkit-mask-image: url("@{image-path}/car-svgrepo-com.svg");
+                        }
+
+                        .hotel-icon {
+                            mask-image: url("@{image-path}/bed-double-fill-svgrepo-com.svg");
+                            -webkit-mask-image: url("@{image-path}/bed-double-fill-svgrepo-com.svg");
+                        }
+
+                        &:hover {
+                            color: @logo-color;
+                            .nav-icon {
+                                background-color: @logo-color;
+                            }
+                        }
+
+                        &.active {
+                            color: #000;
+                            background-color: #fff;
+                            cursor: default;
+
+                            .nav-icon {
+                                background-color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #tab-container {
+            position: relative;
+
+            .tab-content-wrapper {
+                position: relative;
+                min-height: 400px; // Feste Höhe für den Tab-Inhalt
+                height: 400px !important; // Überschreibe dynamische Höhenanpassung durch JS
+            }
+
+            .tab-content {
+                display: none;
+                padding: 1rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%; // Füllt den gesamten verfügbaren Raum
+                background-color: #fff;
+                color: #000;
+                transition: opacity 0.6s ease-in-out;
+                opacity: 0;
+                overflow-y: auto; // Scrollbar für überlaufenden Inhalt
+            }
+
+            .tab-content.active {
+                display: block;
+                opacity: 1;
+                z-index: 10;
+            }
+
+            .tab-content.fade-out {
+                display: block;
+                opacity: 0;
+                z-index: 20;
+            }
+
+            .tab-content.fade-in {
+                display: block;
+                opacity: 1;
+                z-index: 10;
+            }
+        }
+    }
+}
+
+// Main Content Styles für mobile Ansicht
+.main-content {
+    width: 100%;
+
+    // News Section Styles
+    .news-section {
+        width: 100%;
+        padding: 2rem 1rem;
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr; // Mobile: Eine Spalte
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            overflow: hidden;
+            border: 1px solid #ececec;
+            // Feste Höhe für alle Cards
+            height: 400px; // Anpassen nach Bedarf
+
+            .card-header {
+                flex: 3; // 3/5 der Card-Höhe
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; // Bild wird responsiv angepasst, ohne Verzerrung
+                }
+            }
+
+            .card-body {
+                flex: 2; // 2/5 der Card-Höhe
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden; // Verhindert Überlauf bei zu viel Text
+
+                h3 {
+                    font-size: 0.9rem;
+                    margin: 0 0 0.5rem 0;
+                    color: #666;
+                    font-weight: 500;
+                    flex-shrink: 0; // Verhindert Schrumpfen
+                }
+
+                h4 {
+                    font-size: 1.5rem; // 2,5x größer als h3
+                    margin: 0;
+                    font-weight: 700;
+                    line-height: 1.3;
+                    // Text-Overflow-Handling
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; // Maximal 3 Zeilen Text
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}
