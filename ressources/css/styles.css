@@ -1033,7 +1033,7 @@ header#hero #tab-navigation #tab-container .tab-content.fade-in {
   }
   .main-content .news-section .news-card .card-body h4 {
     font-size: 1.8rem;
-    -webkit-line-clamp: 3;
+    --webkit-line-clamp: 3;
   }
 }
 @media (min-width: 1440px) {
