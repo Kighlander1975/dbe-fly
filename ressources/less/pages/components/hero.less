@@ -163,6 +163,231 @@ header#hero {
                 opacity: 1;
                 z-index: 10;
             }
+            .tab-content h3 {
+                display: none;
+            }
+            .tab-content form {
+                // Gemeinsame Stile für input-container
+                .input-container {
+                    position: relative;
+                    margin-bottom: -1px; // Negativer Margin, damit die Borders überlappen
+
+                    // Gemeinsames Styling für die Icons
+                    .field-icon {
+                        position: absolute;
+                        right: 0.5rem;
+                        top: calc(
+                            50% + 0.75rem
+                        ); // 0.75rem nach unten verschoben
+                        transform: translateY(-50%) scaleX(-1); // Horizontal spiegeln und zentrieren
+                        width: 1.25rem; // Größe des Icons
+                        height: 1.25rem;
+                        z-index: 3; // Über dem Input, aber unter dem fokussierten Label
+                        pointer-events: none; // Damit Klicks durch das Icon hindurch gehen
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 20px 15px 10px;
+                        padding-right: 2.5rem; // Zusätzlicher Platz rechts für das Icon
+                        border: 1px solid #ccc;
+                        font-size: 16px;
+                        background: transparent;
+                        transition: border-color 0.2s ease;
+                        position: relative; // Hinzugefügt für z-index-Kontext
+
+                        // Placeholder komplett ausblenden
+                        &::placeholder {
+                            color: transparent;
+                            opacity: 0;
+                        }
+
+                        &:focus {
+                            outline: none;
+                            border-color: #4a90e2;
+                            z-index: 3; // Noch höherer z-index bei Fokus
+                        }
+
+                        // Angepasste Transformation für das Label
+                        &:focus + label,
+                        &:not(:placeholder-shown) + label {
+                            transform: translateY(-20px) translateX(-10px)
+                                scale(0.85);
+                            color: #4a90e2;
+                            background-color: transparent;
+                            padding: 0 5px;
+                            z-index: 4; // Höchster z-index für das aktive Label
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        left: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 16px;
+                        color: #757575;
+                        pointer-events: none;
+                        transition: all 0.2s ease;
+                        transform-origin: left top;
+                    }
+                }
+
+                #formElementOne {
+                    position: relative;
+                    left: -0.25rem;
+                    margin-bottom: 1rem;
+                    label[for="typeOfFlight"] {
+                        display: none;
+                    }
+                    select {
+                        width: 50%;
+                        border: none;
+                        font-size: 1em;
+                    }
+                }
+
+                #formElementTwo {
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    .input-container {
+                        &#fromContainer {
+                            z-index: 2; // Höherer z-index, damit das Feld bei Fokus über dem anderen liegt
+
+                            // Icon im "Von"-Feld nur auf Desktop anzeigen
+                            .field-icon {
+                                @media (max-width: 767px) {
+                                    display: none; // Auf mobilen Geräten ausblenden
+                                }
+                            }
+                        }
+
+                        &#toContainer {
+                            z-index: 1;
+                        }
+                    }
+
+                    button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        border: 1px solid #757575;
+                        position: absolute;
+                        right: 1.25rem; // 1.25rem Abstand zum rechten Rand
+                        top: 50%; // Mittig zwischen beiden Feldern
+                        transform: translateY(-50%);
+                        z-index: 5; // Höchster z-index, damit der Button über allem liegt
+                        cursor: pointer;
+
+                        img {
+                            width: 1rem;
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+
+                #formElementThree {
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    .input-container {
+                        &#dateContainer {
+                            z-index: 2;
+
+                            // Spezielle Anpassung für das Chat-Icon im Datumsfeld
+                            .field-icon {
+                                right: 2.5rem; // Mehr Platz nach rechts, um Platz für das Kalender-Icon zu lassen
+                            }
+
+                            // Styling für das Browser-eigene Kalender-Icon
+                            input[type="date"]::-webkit-calendar-picker-indicator {
+                                position: absolute;
+                                right: 0.5rem;
+                                top: calc(50% + 0.75rem);
+                                transform: translateY(-50%);
+                                width: 1.25rem;
+                                height: 1.25rem;
+                                opacity: 0.7;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                #formElementFour {
+                    display: flex;
+                    margin-bottom: 0.5rem;
+                    img {
+                        width: 1rem;
+                        transform: rotate(90deg);
+                    }
+                    span {
+                        padding-left: 0.5rem;
+                        display: inline-block;
+                    }
+                }
+                #formElementFive {
+                    margin-bottom: 1rem;
+
+                    input[type="checkbox"] {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        width: 1rem;
+                        height: 1rem;
+                        border: 2px solid #ccc;
+                        background-color: white;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        position: relative;
+                        margin-right: 0.5rem;
+                        border-radius: 0;
+
+                        &:checked {
+                            background-color: white;
+                            border-color: #ccc;
+
+                            // Kleinerer Haken mit mehr Abstand zum Rand
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 0.2rem; // Etwas mehr nach rechts
+                                top: 0;
+                                width: 0.35rem; // Von 0.4rem verkleinert
+                                height: 0.5rem; // Von 0.6rem verkleinert
+                                border: solid black;
+                                border-width: 0 1.5px 1.5px 0; // Etwas dünnere Linien (von 2px auf 1.5px)
+                                transform: rotate(45deg);
+                            }
+                        }
+
+                        &:focus {
+                            outline: none;
+                            border-color: #757575;
+                        }
+                    }
+
+                    label {
+                        vertical-align: middle;
+                        cursor: pointer;
+                    }
+                }
+
+                #formElementSix {
+                    input {
+                        width: 100%;
+                        background-color: @button-color;
+                        text-align: center;
+                        font-weight: bold;
+                        color: #fff;
+                        padding: 1rem 0;
+                        border: 1px solid #ccc;
+                    }
+                }
+            }
         }
     }
 }

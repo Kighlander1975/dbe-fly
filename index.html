@@ -85,104 +85,108 @@
                         <div class="tab-content-wrapper">
                             <div id="flights" class="tab-content active">
                                 <h3>Flüge</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Inventore quasi earum
-                                    excepturi rerum error quae nemo maiores,
-                                    quidem quisquam assumenda veniam ipsam,
-                                    neque, porro a laudantium eos qui soluta
-                                    fugit dolorum itaque ea nihil! Magni quis ea
-                                    maiores unde illum at, ratione repellendus
-                                    recusandae tenetur magnam corrupti? Saepe,
-                                    at perferendis.
-                                </p>
+                                <form>
+                                    <!-- Ursprüngliche Reihenfolge der Elemente beibehalten -->
+                                    <div id="formElementOne">
+                                        <label for="typeOfFlight"
+                                            >Flugart</label
+                                        >
+                                        <select id="typeOfFlight">
+                                            <option value="1">
+                                                Einfacher Flug
+                                            </option>
+                                            <option value="2" selected>
+                                                Hin- und Rückflug
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div id="formElementTwo">
+                                        <div
+                                            id="fromContainer"
+                                            class="input-container"
+                                        >
+                                            <input
+                                                type="Text"
+                                                id="fromAP"
+                                                placeholder="Von"
+                                            />
+                                            <label for="fromAP">Von</label>
+                                            <img
+                                                class="field-icon"
+                                                src="ressources/images/chat-svgrepo-com.svg"
+                                                alt="Chat/Info-Icon"
+                                            />
+                                        </div>
+                                        <div
+                                            id="toContainer"
+                                            class="input-container"
+                                        >
+                                            <input
+                                                type="Text"
+                                                id="toAP"
+                                                placeholder="Nach"
+                                            />
+                                            <label for="toAP">Nach</label>
+                                            <img
+                                                class="field-icon"
+                                                src="ressources/images/chat-svgrepo-com.svg"
+                                                alt="Chat/Info-Icon"
+                                            />
+                                        </div>
+                                        <button id="direction">
+                                            <img
+                                                src="ressources/images/arrows-horizontal-svgrepo-com.svg"
+                                                alt="Richtungswechsel-Pfeile"
+                                            />
+                                        </button>
+                                    </div>
+                                    <div id="formElementThree">
+                                        <div
+                                            id="dateContainer"
+                                            class="input-container"
+                                        >
+                                            <input
+                                                type="date"
+                                                id="flightDate"
+                                                placeholder="Abflug - Rückflug"
+                                            />
+                                            <label for="flightDate"
+                                                >Abflug - Rückflug</label
+                                            >
+                                            <img
+                                                class="field-icon"
+                                                src="ressources/images/chat-svgrepo-com.svg"
+                                                alt="Chat/Info-Icon"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div id="formElementFour">
+                                        <img
+                                            src="ressources/images/settings-svgrepo-com.svg"
+                                            alt="Flugeinstellungen"
+                                        />
+                                        <span>Economy, 1 Reisende(r)</span>
+                                    </div>
+                                    <div id="formElementFive">
+                                        <input type="checkbox" id="nonstop" />
+                                        <label for="nonstop"
+                                            >Nur Nonstop Flüge</label
+                                        >
+                                    </div>
+                                    <div id="formElementSix">
+                                        <input type="submit" value="Suchen" />
+                                    </div>
+                                </form>
                             </div>
+
                             <div id="flight-hotel" class="tab-content">
                                 <h3>Flug & Hotel</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Temporibus ipsum corrupti
-                                    repudiandae tenetur similique, asperiores
-                                    iste reiciendis veniam veritatis fugiat
-                                    tempore placeat quisquam voluptatibus
-                                    repellat beatae odio doloremque voluptatem
-                                    commodi accusamus quis! Similique pariatur
-                                    quidem, quasi expedita asperiores aspernatur
-                                    modi ullam adipisci, neque molestiae quo
-                                    porro autem deleniti dolores inventore et
-                                    minima velit dicta molestias vitae unde
-                                    facere doloremque! Suscipit accusamus
-                                    perspiciatis hic ex quasi dolores minus,
-                                    architecto laborum et exercitationem, minima
-                                    voluptatem est facilis ipsum vitae
-                                    consectetur obcaecati sapiente natus
-                                    consequatur doloribus. Cumque mollitia magni
-                                    voluptatum dicta, nihil vel veritatis,
-                                    dolorum numquam facilis, quibusdam saepe
-                                    cupiditate fugiat? Nam ea assumenda nemo
-                                    nobis vero quis porro placeat sequi nesciunt
-                                    quod, ratione corrupti, vitae beatae
-                                    reiciendis eius officiis saepe aperiam
-                                    delectus quam! Veritatis ullam ut laborum
-                                    explicabo excepturi culpa, facere iste
-                                    officiis ab sed maxime voluptatibus,
-                                    consequatur, numquam deleniti fugiat veniam!
-                                    Fuga tempore odit consectetur sed quis optio
-                                    molestias dolorem porro saepe? Sequi, ipsum.
-                                    Tempora explicabo, modi excepturi dolore a
-                                    maiores optio tempore vel rem iusto eos,
-                                    voluptas veniam officia, in quidem eligendi
-                                    accusamus amet sed molestias eveniet!
-                                    Provident ratione voluptas explicabo
-                                    quibusdam similique? Corporis aliquam eius
-                                    accusamus repudiandae deserunt repellendus
-                                    ipsam deleniti architecto aliquid, odio
-                                    doloribus itaque modi ducimus incidunt magni
-                                    veritatis dolore quia tempora cum! At, ipsam
-                                    velit quos possimus porro earum assumenda
-                                    iusto, repudiandae animi quidem eveniet!
-                                    Provident explicabo nisi voluptatem ipsa
-                                    eveniet minus deleniti assumenda quo soluta
-                                    ipsam, nemo velit delectus deserunt voluptas
-                                    enim debitis? Repellat non earum possimus
-                                    hic facere, dolor omnis eveniet voluptatem
-                                    eum libero.
-                                </p>
                             </div>
                             <div id="car-rent" class="tab-content">
                                 <h3>Mietwagen</h3>
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Inventore corrupti
-                                    consequatur optio architecto excepturi?
-                                    Soluta nostrum blanditiis quibusdam ducimus
-                                    odit odio. Consectetur necessitatibus nisi,
-                                    asperiores doloremque ab placeat harum ut!
-                                </p>
                             </div>
                             <div id="hotel" class="tab-content">
                                 <h3>Hotel</h3>
-                                <p>
-                                    Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Ab non quas, dolores
-                                    tenetur, voluptatibus iusto, eos aspernatur
-                                    incidunt omnis autem nam quasi similique
-                                    obcaecati ipsa neque vel dolorem deleniti
-                                    exercitationem distinctio soluta iste
-                                    reprehenderit quo laboriosam? Adipisci
-                                    numquam aut possimus asperiores, voluptatem,
-                                    aspernatur suscipit dolor harum
-                                    reprehenderit quos nisi sint corporis cum!
-                                    Laboriosam repellendus sint nam. Facilis
-                                    minus exercitationem, ipsa aspernatur cum
-                                    veritatis explicabo natus magni laudantium
-                                    quia amet quis repellat quae accusantium
-                                    quidem ullam perspiciatis quo veniam. Ad
-                                    modi esse molestias ipsum nisi laboriosam
-                                    suscipit iste error libero veritatis,
-                                    debitis soluta nostrum totam quisquam velit
-                                    dolor, molestiae tenetur illo.
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -196,7 +200,10 @@
                     <!-- Card 1 -->
                     <article class="news-card">
                         <div class="card-header">
-                            <img src="ressources/images/capitol_w_dc.jpg" alt="News Titel 1" />
+                            <img
+                                src="ressources/images/capitol_w_dc.jpg"
+                                alt="News Titel 1"
+                            />
                         </div>
                         <div class="card-body">
                             <h3>Kategorie/Datum</h3>
@@ -210,7 +217,10 @@
                     <!-- Card 2 -->
                     <article class="news-card">
                         <div class="card-header">
-                            <img src="ressources/images/artwork_man_laptop.png" alt="News Titel 2" />
+                            <img
+                                src="ressources/images/artwork_man_laptop.png"
+                                alt="News Titel 2"
+                            />
                         </div>
                         <div class="card-body">
                             <h3>Kategorie/Datum</h3>

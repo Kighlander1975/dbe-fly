@@ -201,6 +201,189 @@ header#hero #tab-navigation #tab-container .tab-content.fade-in {
   opacity: 1;
   z-index: 10;
 }
+header#hero #tab-navigation #tab-container .tab-content h3 {
+  display: none;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container {
+  position: relative;
+  margin-bottom: -1px;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container .field-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: calc(50% + 0.75rem);
+  transform: translateY(-50%) scaleX(-1);
+  width: 1.25rem;
+  height: 1.25rem;
+  z-index: 3;
+  pointer-events: none;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container input {
+  width: 100%;
+  padding: 20px 15px 10px;
+  padding-right: 2.5rem;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: transparent;
+  transition: border-color 0.2s ease;
+  position: relative;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container input::placeholder {
+  color: transparent;
+  opacity: 0;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  z-index: 3;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container input:focus + label,
+header#hero #tab-navigation #tab-container .tab-content form .input-container input:not(:placeholder-shown) + label {
+  transform: translateY(-20px) translateX(-10px) scale(0.85);
+  color: #4a90e2;
+  background-color: transparent;
+  padding: 0 5px;
+  z-index: 4;
+}
+header#hero #tab-navigation #tab-container .tab-content form .input-container label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #757575;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  transform-origin: left top;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementOne {
+  position: relative;
+  left: -0.25rem;
+  margin-bottom: 1rem;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementOne label[for="typeOfFlight"] {
+  display: none;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementOne select {
+  width: 50%;
+  border: none;
+  font-size: 1em;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementTwo {
+  position: relative;
+  margin-bottom: 20px;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#fromContainer {
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#fromContainer .field-icon {
+    display: none;
+  }
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer {
+  z-index: 1;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementTwo button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #757575;
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  cursor: pointer;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementTwo button img {
+  width: 1rem;
+  transform: rotate(90deg);
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementThree {
+  position: relative;
+  margin-bottom: 20px;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementThree .input-container#dateContainer {
+  z-index: 2;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementThree .input-container#dateContainer .field-icon {
+  right: 2.5rem;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementThree .input-container#dateContainer input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0.5rem;
+  top: calc(50% + 0.75rem);
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+  cursor: pointer;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFour {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFour img {
+  width: 1rem;
+  transform: rotate(90deg);
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFour span {
+  padding-left: 0.5rem;
+  display: inline-block;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFive {
+  margin-bottom: 1rem;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFive input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #ccc;
+  background-color: white;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  margin-right: 0.5rem;
+  border-radius: 0;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFive input[type="checkbox"]:checked {
+  background-color: white;
+  border-color: #ccc;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFive input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
+  width: 0.35rem;
+  height: 0.5rem;
+  border: solid black;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFive input[type="checkbox"]:focus {
+  outline: none;
+  border-color: #757575;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementFive label {
+  vertical-align: middle;
+  cursor: pointer;
+}
+header#hero #tab-navigation #tab-container .tab-content form #formElementSix input {
+  width: 100%;
+  background-color: #019788;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  padding: 1rem 0;
+  border: 1px solid #ccc;
+}
 .main-content {
   width: 100%;
 }
@@ -715,6 +898,126 @@ header#hero #tab-navigation #tab-container .tab-content.fade-in {
   }
 }
 @media (min-width: 1080px) {
+  header#hero #tab-navigation #tab-container .tab-content form {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "row1 row1 row1" "from date search";
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form::before {
+    content: "";
+    grid-area: row1;
+    display: flex;
+    width: 50%;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementOne {
+    grid-area: row1;
+    z-index: 1;
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 0.75rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementOne select {
+    width: auto;
+    min-width: 150px;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementFour {
+    grid-area: row1;
+    z-index: 1;
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 0.75rem;
+    margin-left: 170px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementFour span {
+    white-space: nowrap;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementFour img {
+    margin-right: 0.25rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementFive {
+    grid-area: row1;
+    z-index: 1;
+    width: auto;
+    margin-bottom: 0;
+    margin-left: 24.375rem;
+    white-space: nowrap;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementFive label {
+    white-space: nowrap;
+    margin-left: 0.25rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo {
+    grid-area: from;
+    margin-bottom: 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#fromContainer {
+    position: relative;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#fromContainer input {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 2rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#fromContainer .field-icon {
+    right: 1.5rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer {
+    position: relative;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer input {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 1.5rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer label {
+    left: 1.5rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer label.active,
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer label.filled,
+  input:focus ~ header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer label,
+  input:not(:placeholder-shown) ~ header#hero #tab-navigation #tab-container .tab-content form #formElementTwo .input-container#toContainer label {
+    left: 1.5rem;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo button {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementTwo button img {
+    transform: none;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementThree {
+    grid-area: date;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementSix {
+    grid-area: search;
+    width: 100%;
+  }
+  header#hero #tab-navigation #tab-container .tab-content form #formElementSix input {
+    cursor: pointer;
+    width: 90%;
+    height: 100%;
+    padding: 0 1.5rem;
+  }
   .main-content .news-section {
     padding: 3rem 2rem;
   }
