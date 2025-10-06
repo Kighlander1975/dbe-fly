@@ -153,6 +153,57 @@
         }
     }
 
+    section.search-results.active {
+        padding: 2rem;
+        max-width: 1600px;
+        margin: 0 auto;
+
+        .flights {
+            margin-top: 2rem;
+            height: 6.875rem;
+
+            .flight {
+                width: 100%;
+
+                .flight-details {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    width: 100%;
+
+                    .from-to {
+                        width: 80%;
+                        border-right: 1px solid #d8d8d8;
+                        min-height: auto;
+                        padding: 0 1rem;
+
+                        .from {
+                            padding: 0;
+                        }
+
+                        .to {
+                            padding: 0;
+                        }
+
+                        .flight-duration {
+                            padding: 0;
+                            padding-left: 1rem;
+                        }
+                    }
+
+                    .price-eco,
+                    .price-business {
+                        width: 10%;
+                        min-height: auto;
+                        height: 100%;
+                        padding: 0;
+                        padding-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
     .main-content {
         .news-section {
             padding: 3rem 2rem;

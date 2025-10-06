@@ -1,0 +1,221 @@
+section.search-results {
+    display: none;
+}
+
+section.search-results.active {
+    display: block;
+    width: 100%;
+    padding: 2rem 1rem;
+
+    .flights {
+        display: flex;
+        // Höhe entfernt, damit das Element mit dem Inhalt mitwächst
+        min-height: 8rem; // Minimalhöhe statt fester Höhe
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+
+        .flight {
+            width: 100%;
+
+            .flight-details {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #d8d8d8;
+                box-sizing: border-box;
+
+                .from-to {
+                    width: 100%;
+                    min-height: 2rem;
+                    border: 1px solid #d8d8d8;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                    .from {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        width: 5rem;
+                        flex-shrink: 0;
+                        padding: 0.5rem;
+
+                        > div {
+                            text-align: left;
+                            width: 100%;
+                        }
+                    }
+
+                    .to {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        width: 5rem;
+                        flex-shrink: 0;
+                        padding: 0.5rem;
+
+                        > div {
+                            text-align: right;
+                            width: 100%;
+                        }
+                    }
+
+                    .stops {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-grow: 1;
+                        height: 3rem;
+
+                        .stops-line-left {
+                            position: absolute;
+                            left: 0;
+                            width: calc(50% - 1rem);
+                            height: 1px;
+                            background-color: #d8d8d8;
+                            top: 1rem;
+                        }
+
+                        .stops-line-right {
+                            position: absolute;
+                            right: 0;
+                            width: calc(50% - 1rem);
+                            height: 1px;
+                            background-color: #d8d8d8;
+                            top: 1rem;
+                        }
+
+                        .stop-marker {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            z-index: 2;
+                            background-color: #fff;
+                            padding: 0 0.5rem;
+
+                            .stop-number {
+                                font-size: 0.6rem;
+                                color: #666;
+                                margin-bottom: 0.2rem;
+                            }
+
+                            .stop-text {
+                                font-size: 0.6rem;
+                                color: #666;
+                            }
+                        }
+                    }
+
+                    .flight-duration {
+                        width: 100%;
+                        padding: 0.5rem;
+                        padding-left: 1rem;
+                        order: 4;
+
+                        .duration-info {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 0.6rem;
+                            }
+
+                            .duration-text {
+                                padding-left: 0.3rem;
+                                font-size: 0.6rem;
+                                color: #666;
+                            }
+                        }
+                    }
+
+                    .startzeit-start,
+                    .startzeit-dest {
+                        font-weight: bold;
+                        font-size: 0.9em;
+                    }
+                    .port-start,
+                    .port-dest {
+                        font-size: 0.75em;
+                        text-transform: uppercase;
+                    }
+                    .terminal-start,
+                    .terminal-dest {
+                        font-size: 0.5em;
+                    }
+                }
+
+                // Preisboxen-Container
+                .price-container {
+                    display: flex;
+                    width: 100%;
+                    // Sicherstellen, dass die Preisboxen nebeneinander angezeigt werden
+                }
+
+                // Gemeinsame Stile für beide Preisboxen
+                .price-eco,
+                .price-business {
+                    width: 50%;
+                    min-height: 2rem;
+                    border: 1px solid #d8d8d8;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    padding: 1rem 0.5rem;
+                    padding-bottom: 2rem; // Mehr Platz für das Chevron unten
+
+                    // Gemeinsame Stile für alle Textelemente
+                    h6,
+                    p,
+                    h5 {
+                        margin: 0 0;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    // Stil für die Überschrift
+                    h6 {
+                        font-weight: 600;
+                        font-size: 0.8rem;
+                    }
+
+                    // Stil für den Preis
+                    h5 {
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+
+                    // Stil für den "ab" und "EUR" Text
+                    p {
+                        font-size: 0.7rem;
+                    }
+
+                    // Stil für das Chevron
+                    .chevron {
+                        position: absolute;
+                        bottom: 0.5rem;
+                        cursor: pointer;
+
+                        svg {
+                            transition: transform 0.3s ease;
+                        }
+
+                        // Wenn das Chevron gedreht werden soll (für den aufgeklappten Zustand)
+                        &.active svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                // Spezifische Stile für Economy
+                .price-eco {
+                    color: @logo-color; // Grünlicher Farbton für Economy
+                }
+            }
+        }
+    }
+}

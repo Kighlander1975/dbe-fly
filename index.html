@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>dbe-fly - Projekt</title>
+        <title>dbe-fly - Projekt - V2: Ergebnis Anzeige</title>
         <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -195,6 +195,92 @@
         </header>
 
         <main class="main-content">
+            <section class="search-results active">
+                <div class="flights">
+                    <div class="flight">
+                        <div class="flight-details">
+                            <div class="from-to">
+                                <div class="from">
+                                    <div class="startzeit-start">10:00</div>
+                                    <div class="port-start">STR</div>
+                                    <div class="terminal-start">&nbsp;</div>
+                                </div>
+                                <div class="stops">
+                                    <div class="stops-line-left"></div>
+                                    <div class="stop-marker">
+                                        <div class="stop-number">1</div>
+                                        <div class="stop-text">Stopp</div>
+                                    </div>
+                                    <div class="stops-line-right"></div>
+                                </div>
+                                <div class="to">
+                                    <div class="startzeit-dest">12:35</div>
+                                    <div class="port-dest">FRA</div>
+                                    <div class="terminal-dest">Terminal 1</div>
+                                </div>
+                                <div class="flight-duration">
+                                    <div class="duration-info">
+                                        <img
+                                            src="ressources/images/time-svgrepo-com.svg"
+                                            alt="Uhr-Symbol als Platzhalter für Dauer"
+                                        />
+                                        <div class="duration-text">
+                                            Dauer: <span class="hours">5</span>h
+                                            <span class="minutes">45</span>min
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-eco">
+                                <h6>Economy</h6>
+                                <p>ab</p>
+                                <h5 class="eco-price">99,45</h5>
+                                <p>EUR</p>
+                                <div class="chevron eco">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <polyline
+                                            points="6 9 12 15 18 9"
+                                        ></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="price-business">
+                                <h6>Business</h6>
+                                <p>ab</p>
+                                <h5 class="busi-price">123,45</h5>
+                                <p>EUR</p>
+                                <div class="chevron busi">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <polyline
+                                            points="6 9 12 15 18 9"
+                                        ></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="news-section">
                 <div class="news-grid">
                     <!-- Card 1 -->
